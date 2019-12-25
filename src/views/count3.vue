@@ -1,13 +1,17 @@
 <template>
     <div class="box">
+        <input type="checkbox" v-model="isAllChecked" @change="handleChange">全选
         <ul>
             <li v-for="data in datalist" :key="data.id">
                 <!-- {{ data }} -->
-                <input type="checkbox" v-model="checkgroup" :value="data" @change="handleClick">
+                <!-- <input type="checkbox" v-model="checkgroup" :value="data" @change="handleChange"> -->
+                <input type="checkbox" v-model="checkgroup" :value="data" @change="handleItemChange">
                 {{ data }}
                 <button @click="data.number++">add</button>
-                <span>{{ data.number }}</span>
-                <button @click="data.number--">reduce</button>
+                <!-- <span>{{ data.number }}</span> -->
+                <span><input type="number" v-model="data.number"></span>
+                <!-- <button @click="data.number--">reduce</button> -->
+                <button @click="handleReaduce(data)">reduce</button>
             </li>
         </ul>
         {{ checkgroup }}
@@ -52,8 +56,27 @@ export default {
         };
     },
     methods: {
-        handleClick () {
-            console.log('handleClick')
+        handleItemChange () {
+          console.log('handleItemChange')
+          if(this.checkgroup.length===this.datalist.length){
+            this.isAllChecked = true;
+          }else {
+            this.isAllChecked = false;
+          }
+        },
+        handleReaduce(data){
+          data.number--
+          if(data.number===0){
+            data.number=1
+          }
+        },
+        handleChange () {
+            console.log('handleChange',this.isAllChecked)
+            if(this.isAllChecked){
+              this.checkgroup=this.datalist
+            }else {
+              this.checkgroup = [];
+            }
         },
         getSum() {
             // var sum = 0;
