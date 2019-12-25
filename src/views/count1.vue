@@ -38,8 +38,13 @@ export default {
       var n = 10;
       // this.$store.dispatch("reduceFun",n)
       this.reduceFun(n)
-
     }
   }
 }
+
+  var arr = [1,2,3,4,5];
+  var arr2 = ['aaa','bbb','add'];
+  // var newArr = arr.filter(item=> item>3)
+  var newArr = arr2.filter(item=> item.indexOf('a')!=-1)
+  console.log(newArr)
 </script>
