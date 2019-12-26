@@ -16,6 +16,7 @@
         </ul>
         {{ checkgroup }}
         <p>总金额价值: {{ getSum() }}</p>
+        <h1>计算属性总金额{{ getComputedSum }}</h1>
     </div>
 </template>
 
@@ -26,6 +27,7 @@ export default {
     },
     data() {
         return {
+              message: 'Hello',
               checkgroup:[],
               isAllChecked:false,
               sum:0,
@@ -55,6 +57,7 @@ export default {
               ]
         };
     },
+   
     methods: {
         handleItemChange () {
           console.log('handleItemChange')
@@ -79,19 +82,23 @@ export default {
             }
         },
         getSum() {
-            // var sum = 0;
-            // for(var i in this.checkgroup){
-            //     sum+=this.checkgroup[i].number*this.checkgroup[i].price;
-            // }
-            // return sum;
             var mysum = 0;
             for(var i=0;i<this.checkgroup.length;i++){
               mysum += this.checkgroup[i].number*this.checkgroup[i].price;
             }
-
-            // this.sum = mysum;
             return mysum; 
-
+        }
+    },
+    computed: {
+      reversedMessage: function () {
+        return this.message.split('').reverse().join('')
+      },
+      getComputedSum() {
+            var mysum = 0;
+            for(var i=0;i<this.checkgroup.length;i++){
+              mysum += this.checkgroup[i].number*this.checkgroup[i].price;
+            }
+            return mysum; 
         }
     },
     created() {
@@ -100,16 +107,13 @@ export default {
     mounted() {
 
     },
-    computed: {
-
-    },
     watch: {
 
     },
     components: {
 
     },
-};
+}
 </script>
 
 <style scoped lang="less">

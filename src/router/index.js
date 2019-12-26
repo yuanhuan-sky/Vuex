@@ -29,14 +29,18 @@ const routes = [
     // component: Home
     component: () => import( /* webpackChunkName: "about" */ '../views/echarts.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  {
+    path: '/5',
+    name: 'computed',
+    // component: Home
+    component: () => import( /* webpackChunkName: "about" */ '../views/computed.vue')
+  },
+  {
+    path: '/6',
+    name: 'watch',
+    // component: Home
+    component: () => import( /* webpackChunkName: "about" */ '../views/watch.vue')
+  },
 ]
 
 const router = new VueRouter({
