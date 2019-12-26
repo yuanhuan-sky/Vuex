@@ -20,6 +20,12 @@ export default {
             // sum: 0
         };
     },
+    
+    // watch和computed各自处理的数据关系场景不同
+
+    // 1.watch擅长处理的场景：一个数据影响多个数据
+
+    // 2.computed擅长处理的场景：一个数据受多个数据影响
     // watch: {
     //     price(){
     //         console.log('价格发生变化')
@@ -38,15 +44,6 @@ export default {
     //         }
     //     },
     // },
-    methods: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
     computed: {
         // 存在复杂计算，难以维护的情况下使用计算属性
         computedSum () {
@@ -58,6 +55,15 @@ export default {
             }
             return sum;
         }
+    },
+    methods: {
+
+    },
+    created() {
+
+    },
+    mounted() {
+
     },
     components: {
 
