@@ -7,6 +7,8 @@
 </template>
 
 <script>
+    const dataB = JSON.parse(localStorage.getItem('缓存名称'))
+    console.log(dataB)
 export default {
     props: {
 

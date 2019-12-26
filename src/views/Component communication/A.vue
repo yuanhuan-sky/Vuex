@@ -7,6 +7,8 @@
 </template>
 
 <script>
+    const orderData = { 'orderId': 123, 'price': 88 }
+    localStorage.setItem('缓存名称', JSON.stringify(orderData))
 export default {
     props: {
 
