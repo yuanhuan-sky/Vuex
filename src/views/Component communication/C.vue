@@ -1,10 +1,12 @@
 <template>
     <div>
         <h1>C页面</h1>
+        <D @dEvent="Cevent"></D>
     </div>
 </template>
 
 <script>
+import D from './D' 
 export default {
     props: {
 
@@ -15,7 +17,9 @@ export default {
         };
     },
     methods: {
-
+        Cevent(data){
+            console.log(data)
+        }
     },
     created() {
 
@@ -30,7 +34,7 @@ export default {
 
     },
     components: {
-
+        D
     },
 };
 </script>

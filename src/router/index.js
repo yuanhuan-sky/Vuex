@@ -65,6 +65,18 @@ const routes = [
     // component: Home
     component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/D.vue')
   },
+  {
+    path: '/parent',
+    name: 'parent',
+    // component: Home
+    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/parent.vue')
+  },
+  {
+    path: '/children',
+    name: 'children',
+    // component: Home
+    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/children.vue')
+  },
 ]
 
 const router = new VueRouter({
