@@ -45,37 +45,49 @@ const routes = [
     path: '/A',
     name: 'A',
     // component: Home
-    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/A.vue')
+    component: () => import('../views/Component communication/A.vue')
   },
   {
     path: '/B',
     name: 'B',
     // component: Home
-    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/B.vue')
+    component: () => import('../views/Component communication/B.vue')
   },
   {
     path: '/C',
     name: 'C',
     // component: Home
-    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/C.vue')
+    component: () => import('../views/Component communication/C.vue')
   },
   {
     path: '/D',
     name: 'D',
     // component: Home
-    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/D.vue')
+    component: () => import('../views/Component communication/D.vue')
   },
   {
     path: '/parent',
     name: 'parent',
     // component: Home
-    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/parent.vue')
+    component: () => import('../views/Component communication/parent.vue')
   },
   {
     path: '/children',
     name: 'children',
     // component: Home
-    component: () => import( /* webpackChunkName: "about" */ '../views/Component communication/children.vue')
+    component: () => import('../views/Component communication/children.vue')
+  },
+  {
+    path: '/AAA',
+    name: 'eventBusA',
+    // component: Home
+    component: () => import('../views/eventBus/A.vue')
+  },
+  {
+    path: '/BBB',
+    name: 'eventBusB',
+    // component: Home
+    component: () => import('../views/eventBus/B.vue')
   },
 ]
 
