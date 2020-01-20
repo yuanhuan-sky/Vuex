@@ -89,6 +89,12 @@ const routes = [
     // component: Home
     component: () => import('../views/eventBus/B.vue')
   },
+  {
+    path: '/chaxun',
+    // name: 'eventBusB',
+    // component: Home
+    component: () => import('../views/mohuchaxun.vue')
+  },
 ]
 
 const router = new VueRouter({
